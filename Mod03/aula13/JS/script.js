@@ -10,7 +10,9 @@ function handleKeyUp(e) {
     if(e.key === 'Enter') {
         const newLi = document.createElement('li'); /* criar elemento na lista*/
         newLi.innerHTML = input.value; /* pegar o valor digitado */
-        lista.appendChild(newLi); /* adicionar na lista */
+        lista.appendChild(newLi); /* 
+        
+        adicionar na lista */
 
         input.value = ''; /* limpa campo de pesquisa */
     }
