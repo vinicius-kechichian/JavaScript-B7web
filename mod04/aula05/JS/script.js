@@ -1,6 +1,6 @@
 class Person {
-    
-    _age = 0;
+// Variavéis //
+    _age = 10;
     steps = 0;
 
     constructor(firstName, lastName) {
@@ -21,7 +21,8 @@ class Person {
     }
 
     set age(x) {
-        this.age = x;
+        if (typeof x == 'number')
+        this._age = x;
     }
  }
 
@@ -33,5 +34,5 @@ let p3 = new Person("Pedro", "Duarte");
     console.log(`Passos de ${p1.name}: ${p1.steps}`);
 */
 
-p1.age = 20;
+p1.age = 25;
 console.log(`${p1.fullName} tem ${p1.age} anos.`);
