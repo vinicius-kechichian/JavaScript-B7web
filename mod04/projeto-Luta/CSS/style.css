@@ -1,0 +1,33 @@
+@charset "UTF-8";
+
+body {
+    background-color: rgba(0, 0, 0, 0.445);
+}
+
+.fightarea {
+    display: flex;
+    gap: 20px;
+}
+
+#char,
+#monster {
+    flex:1;
+}
+
+.lifebar {
+    height: 10px;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.lifebar .bar {
+    height: inherit;
+    background-color: rgb(102, 29, 29);
+    border-radius: 5px;
+}
+
+.log {
+    border: 1px dotted #2c2929;
+    height: 200px;
+    overflow-y: scroll;
+}
