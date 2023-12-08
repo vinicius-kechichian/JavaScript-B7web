@@ -1,4 +1,6 @@
-let char = new Sorcerer('Bonieky');
-console.log(char.name);
-console.log(char.life)
-console.log(char.attack);
+let char = new Knight('Bonieky');
+let monster = new BigMonster();
+
+
+console.log(monster.name);
+console.log(monster.defense);
