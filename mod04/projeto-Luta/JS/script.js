@@ -1,12 +1,12 @@
 let char = new Sorcerer();
 let monsteer = new BigMonster();
 
-let stage = new Stage(
+let stagio = new stage(
     char,
     monsteer,
     document.querySelector('#char'),
     document.querySelector('#monster')
 );
 
-stage.start();
+stagio.start();
 

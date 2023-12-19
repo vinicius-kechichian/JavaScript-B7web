@@ -36,7 +36,7 @@ class Knight extends Character {
 
 class Sorcerer extends Character {
     constructor() {
-        super();
+        super('Sorcerer');
         this.life = 80;
         this.attack = 14;
         this.defense = 3;
@@ -75,13 +75,23 @@ class stage {
     start() {
         this.update();
         //TODO: Evento do botão de atacar
+        this.fighter1El.querySelector('.attackbutton').addEventListener('click', () => this. doAttack(this.fighter1, this.fighter2));
+        this.fighter2El.querySelector('.attackbutton').addEventListener('click', () => this. doAttack(this.fighter2, this.fighter1));
     }
 
     update() {
         // fighter 1 
-        this.fighter1El.querySelector('.name').innerHTML = this.fighter1.name;
-        
+        this.fighter1El.querySelector('.name').innerHTML = `${this.fighter1.name} - ${this.fighter1.life} HP`;
+        let f1pct = (this.fighter1.life / this.fighter1.maxLife) * 100;
+        this.fighter1El.querySelector('.lifebar .bar').style.width = `${f1pct}%`;
+
         // fighter 2 
-        this.fighter2El.querySelector('.name').innerHTML = this.fighter2.name;
+        this.fighter2El.querySelector('.name').innerHTML = `${this.fighter2.name} - ${this.fighter2.life} HP`;
+        let f2pct = (this.fighter2.life / this.fighter2.maxLife) * 100;
+        this.fighter2El.querySelector('.lifebar .bar').style.width = `${f2pct}%`;
+    }
+
+    doAttack(attacking, attacked) {
+        console.log(`${attacking.name} está atacando ${attacked.name}`);
     }
 }
