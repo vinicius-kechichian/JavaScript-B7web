@@ -75,8 +75,11 @@ class stage {
     start() {
         this.update();
         //TODO: Evento do botão de atacar
-        this.fighter1El.querySelector('.attackbutton').addEventListener('click', () => this. doAttack(this.fighter1, this.fighter2));
-        this.fighter2El.querySelector('.attackbutton').addEventListener('click', () => this. doAttack(this.fighter2, this.fighter1));
+       // this.fighter1El.querySelector('.attackbutton').addEventListener('click', () => this.doAttack(this.fighter1, this.fighter2 ));
+      //  this.fighter2El.querySelector('.attackbutton').addEventListener('click', () => this.doAttack(this.fighter2, this.fighter1 ));
+    
+        this.fighter1El.querySelector(".attackButton").addEventListener("click", () => this.doAttack(this.fighter1, this.fighter2) );
+        this.fighter2El.querySelector(".attackButton").addEventListener("click", () => this.doAttack(this.fighter2, this.fighter1) );
     }
 
     update() {
@@ -93,5 +96,14 @@ class stage {
 
     doAttack(attacking, attacked) {
         console.log(`${attacking.name} está atacando ${attacked.name}`);
+        if(attacking.life <= 0 || attacked.life <= 0 ) {
+            console.log(`atacando cachorro morto.`);
+            return;
+        }
+
+        let attackFactor = (Math.random() * 2).toFixed(2);
+        console.log(attackFactor);
+
+        this.update();
     }
 }
